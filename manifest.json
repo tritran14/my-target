@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "My Target Extension",
+  "description": "My Target Extension",
+  "version": "1.0",
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "background": {
+    "service_worker": "scripts/background.js"
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+B",
+        "mac": "Command+B"
+      }
+    }
+  },
+  "permissions": ["storage"]
+}
